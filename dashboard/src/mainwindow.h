@@ -35,7 +35,7 @@ private:
     Settings* settings;
     QTreeView* tree1;
     QTreeView* tree2;
-    //TreeModel* model;
+    TreeModel* model;
     QListWidget *list;
 };
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>313</width>
+    <height>281</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -135,6 +135,58 @@
    </property>
    <property name="text">
     <string>I agree</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>190</y>
+     <width>96</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cake</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_2">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>210</y>
+     <width>96</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Coffee</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_3">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>230</y>
+     <width>96</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Gyoza</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>160</y>
+     <width>141</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Favorite breakfast?</string>
    </property>
   </widget>
  </widget>

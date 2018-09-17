@@ -9,7 +9,6 @@
 #include <QTreeView>
 #include <QFile>
 #include <QListWidget>
-#include <QHBoxLayout>
 #include <QPushButton>
 #include <QSize>
 #include "icontext.h"
@@ -65,7 +64,7 @@ void MainWindow::createTreeTab(){
     QFile file(":/treeContent.txt");
     file.open(QIODevice::ReadOnly);
 
-    TreeModel* model = new TreeModel(file.readAll());
+    model = new TreeModel(file.readAll());
     file.close();
 
     tree1 = new QTreeView();
@@ -112,7 +111,7 @@ void MainWindow::createMainMenu(){
     iconList.append(QString::fromUtf8("\uf58d"));
 
 
-    list= new QListWidget(this);
+    list = new QListWidget(this);
 
 
     for(int i=0; i<stringList.size(); i++){
@@ -125,8 +124,10 @@ void MainWindow::createMainMenu(){
         list->setItemWidget(listItem, iconText);
     }
 
+    /*QVBoxLayout *layout = new QVBoxLayout;
 
-    ui->menuScroll->setWidget(list);
+    ui->menuContainer->setLayout(layout);*/
+    ui->menuContainer->layout()->addWidget(list);
 
 }
 
@@ -137,5 +138,5 @@ MainWindow::~MainWindow()
     delete tree1;
     delete tree2;
     delete settings;
-    //delete model;
+    delete model;
 }
