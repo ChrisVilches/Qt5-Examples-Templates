@@ -1,0 +1,18 @@
+Software
+ Agile
+ Programming languages
+  Python
+  C++
+  Java
+  Javascript
+ERP
+ SAP
+ IBM i
+Databases
+ SQL
+  MySQL
+  PostgreSQL
+  Oracle PlSQL
+ NoSQL
+  MongoDB
+  NeDB

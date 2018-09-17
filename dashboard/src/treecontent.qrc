@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="treeContent.txt">resources/treeContent.txt</file>
+    </qresource>
+</RCC>
