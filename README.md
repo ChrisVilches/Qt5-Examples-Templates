@@ -6,7 +6,7 @@ My goals on this repository:
 * Learn more Python and create sample apps using PyQt (also move away from C++).
 * Create my own components, which have custom rendering.
 * Create at least one app with PyQt that has multiple views with several types of components, such as:
-  * Graphs
+  * Graphs/charts
   * Tables
   * Loading gifs before displaying a view or data
   * Use reactive programming as the main asynchronous mechanism
