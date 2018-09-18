@@ -1,25 +1,6 @@
 # Qt5 Examples & Templates
 
-## Images
-
-### Dashboard
-
-
-[Dashboard template](dashboard)
-
-
-<p align="center">
-  <img src="images/dashboard1.png" width="400" title="Dashboard 1">
-</p>
-
-<p align="center">
-  <img src="images/dashboard1.png" width="400" title="Dashboard 2">
-</p>
-
-
-## Goals
-
-My goals on this repository:
+The goals for this repository are:
 
 * Create sample apps using C++ with Qt5.
 * Learn more Python and create sample apps using PyQt (also move away from C++).
@@ -32,5 +13,24 @@ My goals on this repository:
   * 3D animations
   * Video player
   * `What you see is what you get` textarea editor (the ones where you can use formatting, etc)
+
+
+
+## Screenshots
+
+### Dashboard
+
+
+[Dashboard template](dashboard)
+
+
+<p align="center">
+  <img src="images/dashboard1.png" width="600" title="Dashboard 1">
+</p>
+
+<p align="center">
+  <img src="images/dashboard2.png" width="600" title="Dashboard 2">
+</p>
+
 
 
