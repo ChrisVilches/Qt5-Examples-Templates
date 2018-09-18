@@ -18,6 +18,7 @@
 #include <QFontDatabase>
 #include <QDebug>
 #include <QSizePolicy>
+#include <QObjectList>
 
 void MainWindow::okBtnClicked(){
     QMessageLogger q;
@@ -55,10 +56,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //QSizePolicy qSizePolicy = new QSizePolicy(QSizePolicy::ExpandFlag);
 
-//    ui->upperContainer->setSizeAdjustPolicy(qSizePolicy.horizontalPolicy());
+    //ui->upperContainer->setSizeAdjustPolicy(qSizePolicy.horizontalPolicy());
 
-    ui->upperContainer->setWidget(settings);
-    //ui->upperContainer->setWidget(home);
+    //ui->upperContainer->setWidget(settings);
+    setView(home);
 
 }
 
@@ -97,7 +98,7 @@ void MainWindow::createTreeTab(){
 
 
 
-void MainWindow::createMainMenu(){
+void MainWindow::createMainMenu(){    
 
     QStringList stringList, iconList;
 
@@ -134,11 +135,52 @@ void MainWindow::createMainMenu(){
         listItem->setSizeHint(QSize(50, 33));
 
         list->addItem(listItem);
+        menuItems.push_back(listItem);
         list->setItemWidget(listItem, iconText);
     }
 
+
     ui->menuContainer->layout()->addWidget(list);
 
+    connect(list, SIGNAL(itemClicked(QListWidgetItem*)),
+                this, SLOT(onListItemClicked(QListWidgetItem*)));
+
+}
+
+void MainWindow::setView(QWidget *component){
+    ui->upperContainer->takeWidget();
+    ui->upperContainer->setWidget(component);
+}
+
+void MainWindow::onListItemClicked(QListWidgetItem* item)
+{
+
+    QWidget* newView = 0;
+
+    if(item == menuItems.at(0)){
+        newView = home;
+    } else if(item == menuItems.at(1)){
+        newView = settings;
+    } else if(item == menuItems.at(2)){
+        newView = loading;
+    }
+
+    if(newView == 0) return;
+
+    QSize minSize = newView->minimumSize();
+    if(minSize.width() == 0 && minSize.height() == 0){
+        qWarning() << "The component has a minimum size of (0, 0). This may result in scrollbars not appearing (specially components without a layout that were built using drag & drop).";
+    }
+
+
+    setView(newView);
+
+    /*if(list->item(0) == item){
+        qWarning() << "First item";
+    }*/
+    /*if (ui->listMail->item(0) == item) {
+        // This is the first item.
+    }*/
 }
 
 MainWindow::~MainWindow()

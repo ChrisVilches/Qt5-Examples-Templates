@@ -37,7 +37,8 @@ FORMS    += mainwindow.ui \
 
 RESOURCES += \
     treecontent.qrc \
-    fontawesome.qrc
+    fontawesome.qrc \
+    loading.qrc
 
 OTHER_FILES +=
 
