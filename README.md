@@ -9,11 +9,11 @@
 
 
 <p align="center">
-  <img src="images/dashboard1.png" width="256" title="Dashboard 1">
+  <img src="images/dashboard1.png" width="600" title="Dashboard 1">
 </p>
 
 <p align="center">
-  <img src="images/dashboard1.png" width="256" title="Dashboard 2">
+  <img src="images/dashboard2.png" width="600" title="Dashboard 2">
 </p>
 
 
