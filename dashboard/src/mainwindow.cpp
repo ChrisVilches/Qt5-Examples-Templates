@@ -19,6 +19,7 @@
 #include <QDebug>
 #include <QSizePolicy>
 #include <QObjectList>
+#include <QMessageBox>
 
 void MainWindow::okBtnClicked(){
     QMessageLogger q;
@@ -30,6 +31,10 @@ void MainWindow::okBtnClicked(){
 
     if(nextValue >= 100){
         nextValue = 100;
+        QMessageBox::information(
+            this,
+            tr("Done"),
+            tr("Progress bar is complete.") );
     }
 
     ui->progressBar->setValue(nextValue);
