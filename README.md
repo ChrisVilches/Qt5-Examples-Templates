@@ -1,5 +1,24 @@
 # Qt5 Examples & Templates
 
+## Images
+
+### Dashboard
+
+
+[Dashboard template](dashboard)
+
+
+<p align="center">
+  <img src="images/dashboard1.png" width="256" title="Dashboard 1">
+</p>
+
+<p align="center">
+  <img src="images/dashboard1.png" width="256" title="Dashboard 2">
+</p>
+
+
+## Goals
+
 My goals on this repository:
 
 * Create sample apps using C++ with Qt5.
