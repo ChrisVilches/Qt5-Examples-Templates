@@ -30,14 +30,17 @@ void MainWindow::okBtnClicked(){
     int nextValue = currValue + 3;
 
     if(nextValue >= 100){
-        nextValue = 100;
+        nextValue = 100;        
+    }
+
+    ui->progressBar->setValue(nextValue);
+
+    if(nextValue == 100){
         QMessageBox::information(
             this,
             tr("Done"),
             tr("Progress bar is complete.") );
     }
-
-    ui->progressBar->setValue(nextValue);
 }
 
 
@@ -58,13 +61,9 @@ MainWindow::MainWindow(QWidget *parent) :
     settings = new Settings();
     home = new Home();
     loading = new Loading();
-
-    //QSizePolicy qSizePolicy = new QSizePolicy(QSizePolicy::ExpandFlag);
-
-    //ui->upperContainer->setSizeAdjustPolicy(qSizePolicy.horizontalPolicy());
-
-    //ui->upperContainer->setWidget(settings);
     setView(home);
+
+    ui->githubLabel->setOpenExternalLinks(true);
 
 }
 
@@ -115,19 +114,17 @@ void MainWindow::createMainMenu(){
     stringList.append(QString::fromUtf8("Likes"));
     stringList.append(QString::fromUtf8("Purchases"));
     stringList.append(QString::fromUtf8("My data"));
-    stringList.append(QString::fromUtf8("Billing"));
     stringList.append(QString::fromUtf8("Change password"));
 
-    iconList.append(QString::fromUtf8("\uf083"));
-    iconList.append(QString::fromUtf8("\uf019"));
-    iconList.append(QString::fromUtf8("\uf2c2"));
-    iconList.append(QString::fromUtf8("\uf0e7"));
-    iconList.append(QString::fromUtf8("\uf500"));
-    iconList.append(QString::fromUtf8("\uf5d1"));
-    iconList.append(QString::fromUtf8("\uf1fd"));
-    iconList.append(QString::fromUtf8("\uf019"));
-    iconList.append(QString::fromUtf8("\uf1c6"));
-    iconList.append(QString::fromUtf8("\uf58d"));
+    iconList.append(QString::fromUtf8("\uf015"));
+    iconList.append(QString::fromUtf8("\uf0ad"));
+    iconList.append(QString::fromUtf8("\uf4ff"));
+    iconList.append(QString::fromUtf8("\uf4fc"));
+    iconList.append(QString::fromUtf8("\uf0c0"));
+    iconList.append(QString::fromUtf8("\uf560"));
+    iconList.append(QString::fromUtf8("\uf53c"));
+    iconList.append(QString::fromUtf8("\uf15c"));
+    iconList.append(QString::fromUtf8("\uf21b"));
 
 
     list = new QListWidget(this);

@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     icontext.cpp \
     settings.cpp \
     home.cpp \
-    loading.cpp
+    loading.cpp \
+    link.cpp
 
 HEADERS  += mainwindow.h \
     treeitem.h \
@@ -27,7 +28,8 @@ HEADERS  += mainwindow.h \
     icontext.h \
     settings.h \
     home.h \
-    loading.h
+    loading.h \
+    link.h
 
 FORMS    += mainwindow.ui \
     icontext.ui \
