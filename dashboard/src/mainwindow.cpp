@@ -15,6 +15,9 @@
 #include "treemodel.h"
 #include "tree.h"
 #include "settings.h"
+#include <QFontDatabase>
+#include <QDebug>
+#include <QSizePolicy>
 
 void MainWindow::okBtnClicked(){
     QMessageLogger q;
@@ -39,13 +42,23 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
 
+    if (QFontDatabase::addApplicationFont(":/FontAwesome.otf") < 0)
+        qWarning() << "FontAwesome cannot be loaded !";
+
     createButtonBar();
     createTreeTab();
     createMainMenu();
 
     settings = new Settings();
+    home = new Home();
+    loading = new Loading();
+
+    //QSizePolicy qSizePolicy = new QSizePolicy(QSizePolicy::ExpandFlag);
+
+//    ui->upperContainer->setSizeAdjustPolicy(qSizePolicy.horizontalPolicy());
 
     ui->upperContainer->setWidget(settings);
+    //ui->upperContainer->setWidget(home);
 
 }
 
@@ -88,7 +101,7 @@ void MainWindow::createMainMenu(){
 
     QStringList stringList, iconList;
 
-    stringList.append(QString::fromUtf8("Main"));
+    stringList.append(QString::fromUtf8("Home"));
     stringList.append(QString::fromUtf8("Settings"));
     stringList.append(QString::fromUtf8("Configure profile"));
     stringList.append(QString::fromUtf8("Friend list"));
@@ -114,9 +127,9 @@ void MainWindow::createMainMenu(){
     list = new QListWidget(this);
 
 
-    for(int i=0; i<stringList.size(); i++){
+    for(int i=0; i<stringList.size() && i<iconList.size(); i++){
 
-        QListWidgetItem *listItem=new QListWidgetItem();
+        QListWidgetItem *listItem = new QListWidgetItem();
         IconText* iconText = new IconText(list, iconList.at(i), stringList.at(i));
         listItem->setSizeHint(QSize(50, 33));
 
@@ -124,9 +137,6 @@ void MainWindow::createMainMenu(){
         list->setItemWidget(listItem, iconText);
     }
 
-    /*QVBoxLayout *layout = new QVBoxLayout;
-
-    ui->menuContainer->setLayout(layout);*/
     ui->menuContainer->layout()->addWidget(list);
 
 }
@@ -139,4 +149,5 @@ MainWindow::~MainWindow()
     delete tree2;
     delete settings;
     delete model;
+    delete home;
 }

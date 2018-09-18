@@ -17,17 +17,23 @@ SOURCES += main.cpp\
     treeitem.cpp \
     treemodel.cpp \
     icontext.cpp \
-    settings.cpp
+    settings.cpp \
+    home.cpp \
+    loading.cpp
 
 HEADERS  += mainwindow.h \
     treeitem.h \
     treemodel.h \
     icontext.h \
-    settings.h
+    settings.h \
+    home.h \
+    loading.h
 
 FORMS    += mainwindow.ui \
     icontext.ui \
-    settings.ui
+    settings.ui \
+    home.ui \
+    loading.ui
 
 RESOURCES += \
     treecontent.qrc \

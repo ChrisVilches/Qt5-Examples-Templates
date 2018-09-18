@@ -4,7 +4,6 @@
 #include <QLabel>
 #include <QString>
 #include <QFont>
-#include <QFontDatabase>
 #include <QDebug>
 #include <QLabel>
 
@@ -13,9 +12,6 @@ IconText::IconText(QWidget *parent, QString fontAwesomeCode, QString text) :
     QWidget(parent),
     ui(new Ui::IconText)
 {
-
-    if (QFontDatabase::addApplicationFont(":/FontAwesome.otf") < 0)
-        qWarning() << "FontAwesome cannot be loaded !";
 
     ui->setupUi(this);
 
